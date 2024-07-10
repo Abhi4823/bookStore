@@ -7,6 +7,7 @@ import Slider from "react-slick";
 import axios from "axios";
 
 import Cards from "./Cards";
+
 function Freebook() {
   const [book, setBook] = useState([]);
   useEffect(() => {

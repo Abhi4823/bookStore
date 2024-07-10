@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import toast from "react-hot-toast";
 function Login() {
+  
   const {
     register,
     handleSubmit,
@@ -107,5 +108,6 @@ function Login() {
     </div>
   );
 }
+
 
 export default Login;
