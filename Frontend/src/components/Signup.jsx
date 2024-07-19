@@ -8,7 +8,7 @@ import toast from "react-hot-toast";
 function Signup() {
   const location = useLocation();
   const navigate = useNavigate();
-  const from = location.state?.from?.pathname || "http://localhost:4002/";
+  const from = location.state?.from?.pathname || "http://localhost:4000/";
   const {
     register,
     handleSubmit,
@@ -21,13 +21,15 @@ function Signup() {
       email: data.email,
       password: data.password,
     };
+    console.log(userInfo);
     await axios
-      .post("/user/signup", userInfo)
+      .post("http://localhost:4000/user/signup", userInfo)
       .then((res) => {
         console.log(res.data);
         if (res.data) {
           toast.success("Signup Successfully");
-          navigate(from, { replace: true });
+          //navigate(from, { replace: true });
+          navigate('/');
         }
         localStorage.setItem("Users", JSON.stringify(res.data.user));
       })
